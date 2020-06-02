@@ -1,0 +1,29 @@
+{% extends 'blog/base.html'%} 
+  {% block content%}
+
+
+{% for user in users%}
+<article class="media content-section">
+
+  
+    <div class="media" style="margin-right: 20px;" >
+    
+      <img src="{{user.username.profile.profile_image.url}}" srcset="" class="rounded-circle"
+        style="height: 100px; width: 100px;">
+
+      <p style="font-size: 15px;">{{user.username}} <span style="font-size: 10px; margin-right: 20px;"> {{user.username.email}}
+
+         
+        </span> <br> <span> {{user.username.profile.bio}} </span></p>
+    
+    </div><br><br>
+    <p>  {{user.comments}}   </p>
+     <p>  {{user.caption}}   </p> <br><br><br>
+     <img src="{{user.image.url}}" srcset="" 
+        style="height: 500px; width: 500px;">
+   
+   
+</article>
+{%endfor%}
+{%endblock%}
+
